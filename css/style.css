@@ -1,0 +1,24 @@
+body{
+background-color: #00EE00; 
+}
+
+#view{
+	font-size: 30pt;
+}
+
+#yes {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
+	color: #FF0000;
+	font-size: 128pt;
+	font-style: bold;
+} 
