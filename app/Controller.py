@@ -12,12 +12,15 @@ def renderTemplate(response, templatename, templatevalues) :
 # Handler classes
 class HomepageHandler(webapp2.RequestHandler) :
     def get(self):
-        template_values = {
-            'page_title' : "Is Greg Color Blind?",
-            'current_year' : date.today().year,
-        }
-            
-        renderTemplate(self.response, 'home.html', template_values)
+        if os.environ['HTTP_HOST'].endswith('.appspot.com'):  #Redirect the appspot url to the custom url
+            self.response.out.write('<meta http-equiv="refresh" content="0; url=http://isgregcolorblind.com" />')
+        else:
+            template_values = {
+                'page_title' : "Is Greg Color Blind?",
+                'current_year' : date.today().year,
+            }
+                
+            renderTemplate(self.response, 'home.html', template_values)
         
             
 # list of URI/Handler routing tuples
