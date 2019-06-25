@@ -13,3 +13,4 @@ handlers:
   static_dir: js
 - url: /.*
   script: app.Controller.application
+  secure: always
